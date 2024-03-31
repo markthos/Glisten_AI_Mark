@@ -7,9 +7,9 @@
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "paragraph",
+						"type": "heading2",
 						"content": {
-							"text": "Amet ex quis adipisicing tempor laboris reprehenderit esse nulla sit pariatur."
+							"text": "Apart"
 						}
 					}
 				]
@@ -18,9 +18,9 @@
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "heading1",
+						"type": "paragraph",
 						"content": {
-							"text": "Present"
+							"text": "Ipsum laboris in veniam minim duis duis aliquip."
 						}
 					}
 				]

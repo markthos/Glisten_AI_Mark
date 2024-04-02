@@ -1,5 +1,5 @@
+import Bounded from "@/components/Bounded";
 import type { Content } from "@prismicio/client";
-import { PrismicNextLink } from "@prismicio/next";
 import {
   PrismicRichText,
   SliceComponentProps,
@@ -7,9 +7,6 @@ import {
 } from "@prismicio/react";
 
 const components: JSXMapSerializer = {
-  hyperlink: ({ node, children }) => {
-    return <PrismicNextLink field={node.data}>{children}</PrismicNextLink>;
-  },
   label: ({ node, children }) => {
     if (node.data.label === "codespan") {
       return <code>{children}</code>;
@@ -17,20 +14,17 @@ const components: JSXMapSerializer = {
   },
 };
 
-/**
- * Props for `RichText`.
- */
 type RichTextProps = SliceComponentProps<Content.RichTextSlice>;
 
-/**
- * Component for "RichText" Slices.
- */
-const RichText = ({ slice }: RichTextProps): JSX.Element => {
+export default function RichText({ slice }: RichTextProps) {
   return (
-    <section>
-      <PrismicRichText field={slice.primary.content} components={components} />
-    </section>
+    <Bounded>
+      <div className="prose prose-invert prose-lg prose-slate">
+        <PrismicRichText
+          field={slice.primary.content}
+          components={components}
+        />
+      </div>
+    </Bounded>
   );
-};
-
-export default RichText;
+}

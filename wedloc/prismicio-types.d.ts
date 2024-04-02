@@ -4,7 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type CaseStudyDocumentDataSlicesSlice = RichTextSlice;
+type CaseStudyDocumentDataSlicesSlice = CaseStudiesSlice | RichTextSlice;
 
 /**
  * Content for Case Study documents
@@ -103,6 +103,7 @@ export type CaseStudyDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | CaseStudiesSlice
   | ShowcaseSlice
   | BentoSlice
   | HeroSlice
